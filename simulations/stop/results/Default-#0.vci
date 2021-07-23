@@ -1,0 +1,106 @@
+file 65601 1627032255                                           
+version 2
+run Default-0-20210723-09:23:58-27706
+attr configname Default
+attr datetime 20210723-09:23:58
+attr experiment Default
+attr inifile stop.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network StopScenario
+attr processid 27706
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.playgroundSizeX 2500m
+param *.playgroundSizeY 2500m
+param *.playgroundSizeZ 50m
+param *.annotations.draw true
+param *.obstacles.obstacles "xmldoc(\"config.xml\", \"//AnalogueModel[@type='SimpleObstacleShadowing']/obstacles\")"
+param *.manager.updateInterval 1s
+param *.manager.host "\"localhost\""
+param *.manager.port 9999
+param *.manager.autoShutdown true
+param *.manager.launchConfig "xmldoc(\"stop.launchd.xml\")"
+param *.connectionManager.sendDirect true
+param *.connectionManager.maxInterfDist 2600m
+param *.connectionManager.drawMaxIntfDist false
+param *.**.nic.mac1609_4.useServiceChannel false
+param *.**.nic.mac1609_4.txPower 20mW
+param *.**.nic.mac1609_4.bitrate 6Mbps
+param *.**.nic.phy80211p.minPowerLevel -110dBm
+param *.**.nic.phy80211p.useNoiseFloor true
+param *.**.nic.phy80211p.noiseFloor -98dBm
+param *.**.nic.phy80211p.decider "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.analogueModels "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.usePropagationDelay true
+param *.**.nic.phy80211p.antenna "xmldoc(\"antenna.xml\", \"/root/Antenna[@id='monopole']\")"
+param *.node[*].nic.phy80211p.antennaOffsetY "0 m"
+param *.node[*].nic.phy80211p.antennaOffsetZ "1.895 m"
+param *.node[*].applType "\"FloodingApp\""
+param *.node[*].appl.headerLength "80 bit"
+param *.node[*].appl.sendBeacons false
+param *.node[*].appl.dataOnSch false
+param *.node[*].appl.beaconInterval 1s
+param *.node[*].veinsmobility.x 0
+param *.node[*].veinsmobility.y 0
+param *.node[*].veinsmobility.z 0
+param *.node[*].veinsmobility.setHostSpeed false
+param *.node[*0].veinsmobility.accidentCount 50
+param *.node[*0].veinsmobility.accidentStart 10s
+param *.node[*0].veinsmobility.accidentDuration 10s
+
+vector 0 StopScenario.node[0].veinsmobility posx ETV
+vector 1 StopScenario.node[0].veinsmobility posy ETV
+vector 2 StopScenario.node[0].veinsmobility speed ETV
+vector 3 StopScenario.node[1].veinsmobility posx ETV
+vector 4 StopScenario.node[1].veinsmobility posy ETV
+vector 5 StopScenario.node[0].veinsmobility acceleration ETV
+vector 6 StopScenario.node[0].veinsmobility co2emission ETV
+vector 7 StopScenario.node[1].veinsmobility speed ETV
+vector 8 StopScenario.node[1].veinsmobility acceleration ETV
+vector 9 StopScenario.node[1].veinsmobility co2emission ETV
+vector 10 StopScenario.node[2].veinsmobility posx ETV
+vector 11 StopScenario.node[2].veinsmobility posy ETV
+vector 12 StopScenario.node[2].veinsmobility speed ETV
+vector 13 StopScenario.node[3].veinsmobility posx ETV
+vector 14 StopScenario.node[3].veinsmobility posy ETV
+vector 15 StopScenario.node[2].veinsmobility acceleration ETV
+vector 16 StopScenario.node[2].veinsmobility co2emission ETV
+vector 17 StopScenario.node[3].veinsmobility speed ETV
+vector 18 StopScenario.node[3].veinsmobility acceleration ETV
+vector 19 StopScenario.node[3].veinsmobility co2emission ETV
+vector 20 StopScenario.node[4].veinsmobility posx ETV
+vector 21 StopScenario.node[4].veinsmobility posy ETV
+vector 22 StopScenario.node[4].veinsmobility speed ETV
+vector 23 StopScenario.node[4].veinsmobility acceleration ETV
+vector 24 StopScenario.node[4].veinsmobility co2emission ETV
+6	3472 2088 4 103 3 98 96 0.973 8.441706200963 242.53340172652 908.21359628376
+5	5560 2205 4 103 3 98 96 -4.5 2.1939699040576 9.9504253807911 193.80632430507
+2	7765 2117 3 103 2 98 97 0 13.997962105451 986.95824324524 12893.78904263
+1	9882 1261 2 103 1 98 98 23.4 23.4 2293.2 53660.88
+0	11143 2328 2 103 1 98 98 37.897135154038 1019.3686997183 54580.400590859 39370818.898369
+9	13471 2442 6 233 5 121 117 0.973 8.4766498358161 265.14922435054 942.44833199068
+8	15913 2705 6 233 5 121 117 -4.5 2.1288368662377 -2.7345884993996 214.75733902641
+7	18618 2601 5 233 4 121 118 0 13.996479830502 995.4751377319 12679.507720458
+4	21219 1583 4 233 3 121 119 23.4 23.4 2784.6 65159.64
+3	22802 2620 4 233 3 121 119 25 1020.2514433054 54915.984795481 39316713.802379
+16	25422 2632 9 235 8 123 116 0.973 7.8293594305003 260.27086540333 865.81103079934
+15	28054 3059 9 235 8 123 116 -3.3053825988363 2.0723474511714 -0.25200122820411 163.84137261997
+12	31113 2910 8 235 7 123 117 0 13.984722011422 992.43468472038 12260.315643843
+11	34023 1698 7 235 6 123 118 23.4 23.4 2761.2 64612.08
+10	35721 2977 7 235 6 123 118 28.615888175309 1019.7216569003 53823.317543094 38156445.262488
+19	38698 2646 11 237 10 125 116 0.973 7.497291817731 257.19960379739 811.48122334226
+18	41344 3099 11 237 10 125 116 -2.5062182777518 2.0805852812248 3.2424065805199 137.16398921229
+17	44443 2961 10 237 9 125 117 0 13.989562971592 993.23251452714 11929.238066938
+14	47404 1706 9 237 8 125 118 23.4 23.4 2761.2 64612.08
+13	49110 2992 9 237 8 125 118 29.280181009131 1020.3235905999 53732.14914894 37993413.197137
+24	52102 2707 15 239 13 127 115 0.973 6.5208006969651 245.28561041676 717.59275165459
+23	54809 3149 15 239 13 127 115 -2.7586839456861 2.0243371033506 4.9310037331399 117.20225905221
+22	57958 2968 14 239 12 127 116 0 12.265801774783 995.43590616604 10971.922520969
+21	60926 1699 13 239 11 127 117 23.4 23.4 2737.8 64064.52
+20	62625 2975 13 239 11 127 117 26.981403886007 1019.8902002172 53867.74549483 37899163.374498
+

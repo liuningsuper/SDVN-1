@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Thu Jul 22 09:29:50 2021 by Eclipse SUMO netedit Version 1.1.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="/home/vagrant/workspaces/workspace.phd/sdvn/simulations/ping/ping.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="/home/vagrant/workspaces/workspace.phd/sdvn/simulations/ping/ping.net.xml"/>
+    </output>
+
+    <processing>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="false"/>
+    </processing>
+
+    <junctions>
+        <no-internal-links value="true"/>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.5"/>
+        <rectangular-lane-cut value="false"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="false"/>
+    </pedestrian>
+
+</configuration>
+-->
+
+<net version="1.1" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,0.00" convBoundary="0.00,-50.00,1000.00,-50.00" origBoundary="-10000000000.00,-10000000000.00,10000000000.00,10000000000.00" projParameter="!"/>
+
+    <edge id="AtoB_L" from="B" to="A" priority="-1">
+        <lane id="AtoB_L_0" index="0" speed="13.89" length="1000.00" shape="1000.00,-48.40 0.00,-48.40"/>
+    </edge>
+    <edge id="AtoB_R" from="A" to="B" priority="-1">
+        <lane id="AtoB_R_0" index="0" speed="13.89" length="1000.00" shape="0.00,-51.60 1000.00,-51.60"/>
+    </edge>
+    <edge id="BtoC_L" from="C" to="B" priority="-1">
+        <lane id="BtoC_L_0" index="0" speed="13.89" length="500.00" shape="500.00,-51.60 1000.00,-51.60"/>
+    </edge>
+    <edge id="BtoC_R" from="B" to="C" priority="-1">
+        <lane id="BtoC_R_0" index="0" speed="13.89" length="500.00" shape="1000.00,-48.40 500.00,-48.40"/>
+    </edge>
+
+    <junction id="A" type="dead_end" x="0.00" y="-50.00" incLanes="AtoB_L_0" intLanes="" shape="0.00,-50.00 0.00,-46.80 0.00,-50.00"/>
+    <junction id="B" type="priority" x="1000.00" y="-50.00" incLanes="BtoC_L_0 AtoB_R_0" intLanes="" shape="1000.00,-53.20 1000.00,-50.00 1000.00,-46.80">
+        <request index="0" response="00" foes="00"/>
+        <request index="1" response="00" foes="00"/>
+    </junction>
+    <junction id="C" type="dead_end" x="500.00" y="-50.00" incLanes="BtoC_R_0" intLanes="" shape="500.00,-50.00 500.00,-46.80 500.00,-50.00"/>
+
+    <connection from="AtoB_R" to="BtoC_R" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from="BtoC_L" to="AtoB_L" fromLane="0" toLane="0" dir="l" state="M"/>
+
+</net>

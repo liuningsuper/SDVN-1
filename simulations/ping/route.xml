@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- generated on 2021-07-22 11:39:26.881300 by $Id$ via randomTrips.py
+  options: -n /home/vagrant/workspaces/workspace.phd/sdvn/simulations/ping/ping.net.xml -e 2 -o /home/vagrant/workspaces/workspace.phd/sdvn/simulations/ping/route.xml <doubleminus>vehicle-class passenger <doubleminus>validate
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="passenger" vClass="passenger">
+    </vType>
+    <trip id="0" depart="0.00" from="BtoC_L" to="AtoB_L" type="passenger"/>
+    <trip id="1" depart="1.00" from="BtoC_L" to="AtoB_L" type="passenger"/>
+</routes>
