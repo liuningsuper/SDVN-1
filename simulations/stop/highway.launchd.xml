@@ -32,9 +32,9 @@
 -->
 
 <launch>
-    <copy file="stop.net.xml" />
-    <copy file="stop.rou.xml" />
-    <copy file="stop.poly.xml" />
-    <copy file="stop.sumocfg" type="config" />
+    <copy file="highway.net.xml" />
+    <copy file="highway.rou.xml" />
+    <copy file="highway.poly.xml" />
+    <copy file="highway.sumocfg" type="config" />
 </launch>
 

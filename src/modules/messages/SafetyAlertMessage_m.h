@@ -41,6 +41,7 @@ class SafetyAlertMessage : public ::veins::BaseFrame1609_4
     ::omnetpp::opp_string demoData;
     LAddress::L2Type senderAddress;
     int serial;
+    simtime_t messageOriginTime;
 
   private:
     void copy(const SafetyAlertMessage& other);
@@ -66,6 +67,8 @@ class SafetyAlertMessage : public ::veins::BaseFrame1609_4
     virtual void setSenderAddress(const LAddress::L2Type& senderAddress);
     virtual int getSerial() const;
     virtual void setSerial(int serial);
+    virtual simtime_t getMessageOriginTime();
+    virtual void setMessageOriginTime(simtime_t);
 };
 
 inline void doParsimPacking(omnetpp::cCommBuffer *b, const SafetyAlertMessage& obj) {obj.parsimPack(b);}

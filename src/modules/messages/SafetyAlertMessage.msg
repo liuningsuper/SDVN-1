@@ -12,4 +12,5 @@ packet SafetyAlertMessage extends BaseFrame1609_4 {
     string demoData;
     LAddress::L2Type senderAddress = -1;
     int serial = 0;
+    simtime_t messageOriginTime; 
 }

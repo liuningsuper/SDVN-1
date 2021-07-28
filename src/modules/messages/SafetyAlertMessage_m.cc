@@ -207,6 +207,7 @@ void SafetyAlertMessage::copy(const SafetyAlertMessage& other)
     this->demoData = other.demoData;
     this->senderAddress = other.senderAddress;
     this->serial = other.serial;
+    this->messageOriginTime = other.messageOriginTime;
 }
 
 void SafetyAlertMessage::parsimPack(omnetpp::cCommBuffer *b) const
@@ -215,6 +216,7 @@ void SafetyAlertMessage::parsimPack(omnetpp::cCommBuffer *b) const
     doParsimPacking(b,this->demoData);
     doParsimPacking(b,this->senderAddress);
     doParsimPacking(b,this->serial);
+    doParsimPacking(b, this->messageOriginTime);
 }
 
 void SafetyAlertMessage::parsimUnpack(omnetpp::cCommBuffer *b)
@@ -223,6 +225,7 @@ void SafetyAlertMessage::parsimUnpack(omnetpp::cCommBuffer *b)
     doParsimUnpacking(b,this->demoData);
     doParsimUnpacking(b,this->senderAddress);
     doParsimUnpacking(b,this->serial);
+    doParsimUnpacking(b, this->messageOriginTime);
 }
 
 const char * SafetyAlertMessage::getDemoData() const
@@ -254,6 +257,18 @@ void SafetyAlertMessage::setSerial(int serial)
 {
     this->serial = serial;
 }
+
+
+simtime_t SafetyAlertMessage::getMessageOriginTime(){
+
+    return this->messageOriginTime;
+}
+
+void SafetyAlertMessage::setMessageOriginTime(simtime_t messageOriginTime){
+
+    this->messageOriginTime=messageOriginTime;
+}
+
 
 class SafetyAlertMessageDescriptor : public omnetpp::cClassDescriptor
 {
@@ -351,6 +366,7 @@ const char *SafetyAlertMessageDescriptor::getFieldName(int field) const
         "demoData",
         "senderAddress",
         "serial",
+        "messageOriginTime",
     };
     return (field>=0 && field<3) ? fieldNames[field] : nullptr;
 }
@@ -362,6 +378,8 @@ int SafetyAlertMessageDescriptor::findField(const char *fieldName) const
     if (fieldName[0]=='d' && strcmp(fieldName, "demoData")==0) return base+0;
     if (fieldName[0]=='s' && strcmp(fieldName, "senderAddress")==0) return base+1;
     if (fieldName[0]=='s' && strcmp(fieldName, "serial")==0) return base+2;
+    if (fieldName[0]=='m' && strcmp(fieldName, "messageOriginTime")==0) return base+3;
+
     return basedesc ? basedesc->findField(fieldName) : -1;
 }
 
@@ -377,6 +395,7 @@ const char *SafetyAlertMessageDescriptor::getFieldTypeString(int field) const
         "string",
         "LAddress::L2Type",
         "int",
+        "simtime_t",
     };
     return (field>=0 && field<3) ? fieldTypeStrings[field] : nullptr;
 }
@@ -448,6 +467,7 @@ std::string SafetyAlertMessageDescriptor::getFieldValueAsString(void *object, in
         case 0: return oppstring2string(pp->getDemoData());
         case 1: {std::stringstream out; out << pp->getSenderAddress(); return out.str();}
         case 2: return long2string(pp->getSerial());
+        //case 3: return long2string(pp->getmessageOriginTime());
         default: return "";
     }
 }
@@ -464,6 +484,7 @@ bool SafetyAlertMessageDescriptor::setFieldValueAsString(void *object, int field
     switch (field) {
         case 0: pp->setDemoData((value)); return true;
         case 2: pp->setSerial(string2long(value)); return true;
+        //case 3: pp->setmessageOriginTime(string2long(value)); return true;
         default: return false;
     }
 }
